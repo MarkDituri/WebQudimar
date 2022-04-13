@@ -88,7 +88,7 @@
 	                </li>
                 </ul>
             </div>
-            <a href="#" class="btn-1 shadow1 style3 bgscheme"><b>EMPEZAR GRATIS</b></a>
+            <a href="#" class="btn-1 shadow1 style3 bgscheme"><b>Crear cuenta</b></a>
             <button type="button" id="sidebarCollapse" class="navbar-toggler active" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -104,17 +104,17 @@
 	  	<div class="swiper-container">
 		    <div class="swiper-wrapper d-none">
 		    	<!-- Item -->
-				<div class="swiper-slide">
+				<div class="swiper-slide" id="section-main">
 					<div class="slider-content">
 						<div class="container">
 							<div class="row">
 								<div class="left col-12 col-sm-12 col-md-7">
 									<h1 class="ez-animate" data-animation="fadeInLeft">Tu carta online lista<br>para escanear</h1>
 									<p class="ez-animate" data-animation="fadeInLeft">Esta tecnología te permite vincular a tus clientes con un menú interactivo de manera fácil y rápida.</p>
-									<ul>
-										<li><a href="#"><img class="img-fluid ez-animate" src="assets/images/img-appstore.png" alt="Appcraft" data-animation="fadeInUp"></a></li>
-										<li><a href="#"><img class="img-fluid ez-animate" src="assets/images/img-googleplay.png" alt="Appcraft" data-animation="fadeInUp"></a></li>
-									</ul>
+									<div class="cont-info right my-auto col-sm-12 col-md-6" id="cont-btns-main">														
+										<a href="#" class="btn-2 shadow1 style3 bgscheme">Empezar gratis</a>
+										<a href="#" class="btn-2 btn-2-off shadow1 style3 brscheme"><i class="icon-btn fa-solid fa-play"></i> Probar Demo</a>
+									</div>
 								</div>
 								<div class="right ez-animate col-12 col-sm-12 col-md-5" data-animation="fadeInRight">
 									<img class="img-fluid" src="assets/images/img-1.png" alt="Appcraft">
@@ -193,7 +193,7 @@
 						<h2>Menú interactivo</h2>
 						<p class="p-1">No solo enlista todos tus productos, sino que también tus clientes podrán armar y confirmar la orden desde la misma carta online.</p>
 						<p class="p-2">Diseñado para tus comenzales, interfaz moderna y super intuitiva.</p>
-						<a href="#" class="btn-2 shadow1 style3 bgscheme">Empezar ahora</a>
+						<a href="#" class="btn-2 shadow1 style3 bgscheme"><i class="icon-btn fa-solid fa-play"></i> Probar Demo</a>
 					</div>
 				</div>
 			</div>
@@ -210,7 +210,7 @@
 							Recibís las comandas de los pedidos listas para imprimir 
 							<i class="fa-solid fa-print"></i></p>
 						<p class="p-2">Estadisticas - Pedido</p>
-						<a href="#" class="btn-2 shadow1 style3 bgscheme">EMPEZAR AHORA</a>
+						<a href="#" class="btn-2 shadow1 style3 bgscheme">Empezar gratis</a>
 					</div>
 					<div class="left col-sm-12 col-md-6">
 						<div class="img-container">
@@ -304,33 +304,35 @@
 				</div>
 				<!-- Item -->
 				<div class="item ez-animate col-md-4" data-animation="fadeInLeft">					
-					<div class="title">Startup Plan</div>
+					<div class="title">Plan inicial</div>
 					<ul>
-						<li>10 pages</li>
-						<li>500 gb storage</li>
-						<li>10 sdd Database</li>
-						<li>Free coustom domain</li>
-						<li>24/7 free support</li>
+						<li>1 Mes</li>
+						<li>QR automatico</li>
+						<li>Carta online</li>
+						<li>100 Productos</li>
+						<li>Pedidos ilimitadas</li>
+						<li>Soporte gratuito 24/7</li>
 					</ul>
-					<div class="price clscheme"><span class="currency">$</span> 25 <span class="duration">/m</span></div>
+					<div class="price clscheme"><span class="currency">$</span> 760 <span class="duration">/m</span></div>
 					<div class="cta">
-						<a href="#" class="btn-1 shadow1 style3 bgscheme">START FREE TRIAL</a>
+						<a href="#" class="btn-1 shadow1 style3 bgscheme">Comenzar Plan</a>
 					</div>
 				</div>
 				<!-- /.Item -->
 				<!-- Item -->
 				<div class="item ez-animate active selected col-md-4" data-animation="fadeInUp">					
-					<div class="title">Startup Plan</div>
+					<div class="title">Demo 30 dias</div>
 					<ul>
-						<li>10 pages</li>
-						<li>500 gb storage</li>
-						<li>10 sdd Database</li>
-						<li>Free coustom domain</li>
-						<li>24/7 free support</li>
+						<li>3O dias</li>
+						<li>QR automatico</li>
+						<li>Carta online</li>
+						<li>40 Productos</li>
+						<li>Pedidos ilimitadas</li>
+						<li style="text-decoration:line-through">Soporte gratuito 24/7</li>
 					</ul>
-					<div class="price clscheme"><span class="currency">$</span> 35 <span class="duration">/m</span></div>
+					<div class="price clscheme"><span class="currency">$</span> 0 <span class="duration">/m</span></div>
 					<div class="cta">
-						<a href="#" class="btn-1 shadow1 style3 bgscheme">START FREE TRIAL</a>
+						<a href="#" class="btn-1 shadow1 style3 bgscheme">Comenzar Prueba</a>
 					</div>
 				</div>
 				<!-- /.Item -->
@@ -366,7 +368,7 @@
 				<div class="form col-12 ez-animate" data-animation="fadeInUp">
 					<form action="#" id="SubscribeForm">
 						<input type="email" name="yourEmail" placeholder="Ingrese su correo eléctronico" required="">
-						<button type="submit" class="shadow1 bgscheme">SUCRIBIRME AHORA</button>
+						<button type="submit" class="shadow1 bgscheme">Suscribirme</button>
 					</form>
 				</div>
 			</div>
@@ -418,7 +420,7 @@
 		</div>
 		<div class="footer-copyright container-fluid ">
 			<div class="col-12">
-				<p>© 2019 Copyrights <a href="https://themeforest.net/user/puricreative/portfolio">PuriCreative</a></p>
+				<p>© 2019 Copyrights <a href="https://themeforest.net/user/puricreative/portfolio">Marcos E. Dituri</a></p>
 			</div>
 		</div>
 	</div>
