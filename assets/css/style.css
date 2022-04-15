@@ -472,7 +472,7 @@ h1, h2, h3, h4, h5, h6 {
           animation: box4 var(--duration) linear infinite;
 }
 #section-preloader .boxes .box > div {
-  --background: #5C8DF6;
+  --background: #9ae8d4;
   --top: auto;
   --right: auto;
   --bottom: auto;
@@ -496,12 +496,12 @@ h1, h2, h3, h4, h5, h6 {
   --left: 0;
 }
 #section-preloader .boxes .box > div:nth-child(2) {
-  --background: #145af2;
+  --background: #64caac;
   --right: 0;
   --rotateY: 90deg;
 }
 #section-preloader .boxes .box > div:nth-child(3) {
-  --background: #447cf5;
+  --background: #83d4bc;
   --rotateX: -90deg;
 }
 #section-preloader .boxes .box > div:nth-child(4) {
@@ -1212,7 +1212,7 @@ a.animated-button.style2:hover:after {
     width: 100%;
 }
 #section-features1 .swiper-container {
-    height: 340px;
+    height: 400px;
 }
 #section-features1 .item{
 	/*max-width: 370px;*/
@@ -2419,8 +2419,7 @@ a.animated-button.style2:hover:after {
 #section-footer .footer-copyright{
 	width: 100%;
 	padding: 20px 0;
-	text-align: center;
-	border-top: 2px solid #ffffff;
+	text-align: center;	
 	padding: 55px 0;
 }
 #section-footer .footer-copyright p{
@@ -2452,6 +2451,7 @@ a.animated-button.style2:hover:after {
 	width: 500px;	
 }
 #section-action .cont-info{
+	margin-top: 46px;
 	text-align: center;
 	margin-bottom: 20px;
 	display: flex;
@@ -2581,6 +2581,16 @@ a.animated-button.style2:hover:after {
 	margin-right: 15px;	
 	max-width: auto!important;
 	background-color: rgb(255, 255, 255)!important;
+}
+.cont-prefoot{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;	
+}
+.cont-prefoot .cont-info{	
+	display: flex!important;
+	justify-content: center!important;
 }
 /*============================
  *      06. RESPONSIVE       *
