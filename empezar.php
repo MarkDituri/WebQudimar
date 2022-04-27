@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="assets/css/animate.min.css" type="text/css">
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<!--SCSS-->
+	<link rel="stylesheet" href="assets/css/succes.css" type="text/css">
 </head>
 <body>	
 	<?php
@@ -73,35 +75,45 @@
     </nav>
 	<!-- /.Section Navbar -->
 
-    <div id="section-action">		
+    <div class="container" id="section-action">		
 			<!-- Section Slider 1 -->
 		<div class="row">
-			<div class="cont-info">						
+			<div class="col-12 cont-info">						
 				<h2>Creá tu cuenta gratis ahora</h2>
-				<p class="p-1">AL hacerlo contarás con un perdiodo de <strong>30 dias gratis</strong> para usar el servicio y todas sus funciones.</p>		
+				<p class="p-1">Al hacerlo contarás con un perdiodo de <strong>30 dias gratis</strong> para usar el servicio y todas sus funciones.</p>		
 			</div>
 		</div>
 
 		
-		<div class="cont-form-action">
-			<form action="#">
+		<div class="row cont-form-action">
+			<form class="col-12" id="formCrear" onsubmit="enviar_validar()">
 				<div class="row">
+					<div id="divLoading" class="">
+						<iframe src="https://gifer.com/embed/7zxq" width=230 height=230.000 frameBorder="0" allowFullScreen></iframe>
+					</div>
+					<div class=" form-group col-sm-12 col-md-12 col-lg-12" id="msg-gral">						
+					</div>
 					<label class="col-12">Cuenta</label>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="text" class="form-control" name="name" placeholder="Tu nombre" required="">
+						<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Tu nombre" >
+						<div class="Mensaje" id="msg-nombre"></div>
 					</div>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="email" class="form-control" name="email" placeholder="Tu Email" required="">
+						<input type="email" class="form-control" name="email" id="email" placeholder="Tu Email" >
+						<div class="Mensaje" id="msg-email"></div>
 					</div>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="number" class="form-control" name="email" placeholder="Tu Celular" required="">
+						<input type="number" class="form-control" name="celular" id="celular" placeholder="Tu Celular" >
+						<div class="Mensaje" id="msg-celular"></div>
 					</div>
 					<label class="col-12">Tu comercio</label>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="number" class="form-control" name="email" placeholder="Nombre de tu Negocio" required="">
+						<input type="text" class="form-control" name="negocio" id="negocio" placeholder="Nombre de tu Negocio" >
+						<div class="Mensaje" id="msg-negocio"></div>
 					</div>					
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="number" class="form-control" name="email" placeholder="/mi-comercio" required="">
+						<input type="text" class="form-control" name="url_negocio" id="url_negocio" placeholder="/mi-comercio" >
+						<div class="Mensaje" id="msg-url_negocio"></div>
 					</div>
 					<div class="form-group form-group-box col-sm-12 col-md-12 col-lg-12">
 						<input type="checkbox" name="terminos" id="terminos">
@@ -113,13 +125,31 @@
 						<button type="submit" class="shadow1 style3 input-btn bgscheme">Crear cuenta</button>
 					</div>
 					<div class="form-group col-md-6 col-12">
-						<button type="submit" class="shadow1 style3 input-btn brscheme">Ya tengo cuenta</button>
+						<button type="button" class="shadow1 style3 input-btn brscheme">Ya tengo cuenta</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 	
+
+	<div class="container" id="section-msg">
+		<div class="col-12 cont-boxSucces">
+			<div class="SucessContainer">
+				<div class="w3-modal-icon w3-modal-success animate">
+					<span class="w3-modal-line w3-modal-tip animateSuccessTip"></span>
+					<span class="w3-modal-line w3-modal-long animateSuccessLong"></span>
+					<div class="w3-modal-placeholder"></div>
+					<div class="w3-modal-fix"></div>
+				</div>
+			</div>
+
+			<h2>Su cuenta fue creada con éxito</h2>
+			<p class="p-1">Por favor, para activar su cuenta debe confirmar su correo electrónico,<p>
+			<div class="alert"><i class="fa-solid fa-envelope"></i> Revise su bandeja de entrada.</div>
+		</div>
+
+	</div>
 
 
 	<!-- /.Section Slider 1 -->
@@ -156,20 +186,14 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<!-- Swiper Slider -->
 	<script src="assets/js/swiper.min.js"></script>
-	<!-- OWL Carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
 	<!-- Waypoint -->
 	<script src="assets/js/jquery.waypoints.min.js"></script>
 	<!-- Easy Waypoint -->
 	<script src="assets/js/easy-waypoint-animate.js"></script>
 	<!-- Scripts -->
 	<script src="assets/js/scripts.js"></script>
-	<!-- Carousel Features 1 -->
-	<script src="assets/js/carousel-features1.js"></script>
-	<!-- Carousel App Screen 1 -->
-	<script src="assets/js/carousel-appscreen1.js"></script>
-	<!-- Carousel Testimonial 1 -->
-	<script src="assets/js/carousel-testimonial1.js"></script>
+
+	<script src="assets/js/empezar.js"></script>
 
 </body>
 </html>

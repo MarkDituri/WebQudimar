@@ -1049,6 +1049,9 @@ a.animated-button.style2:hover:after {
 	font-size: 19px!important;
 	color: rgba(0, 0, 0, 0.513)!important;
 }
+.cont-info h2, .cont-boxSucces h2{
+	font-weight: bold;
+}
 /**
  * 4.1.2 Slider 2
  */
@@ -2436,16 +2439,61 @@ a.animated-button.style2:hover:after {
 /*============================
  *      NUEVOS PROPIOS  *
  *===========================*/
+ #divLoading{
+	display: none;
+    width: 100%;    
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: white;
+    z-index: 999;
+    height: 100%;
+ }
+ .d_none{
+	display: none!important;
+ }
+ .Mensaje{
+	padding: 0 15px;
+	padding-top: 3px;
+
+ }
+ #msg-gral{
+	height: 42px;
+ }
+ .msg-gral{	
+
+	border-left: 2px solid #c60000;
+	color: #c60000;
+	padding: 9px 15px;
+	background-color: rgba(255, 0, 0, 0.071);
+ }
+ #section-action .error-inp{
+	border: 1px solid #c60000!important;
+	background-color: #e89a9a49!important;
+ }
 .bgscheme{
 	font-weight: bold!important;
 	color: #265444!important;	
 }
-#section-action{
+#section-action, #section-msg{
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;	
+}
+#section-msg{
+	display: none;
+}
+.cont-boxSucces{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.cont-boxSucces h2{
+	margin-top: 50px;
 }
 .cont-form-action{
 	width: 500px;	
@@ -2461,10 +2509,15 @@ a.animated-button.style2:hover:after {
 	width: 600px;
 }
 #section-action input {
+	border: 1px solid #9ae8d4!important;
 	padding-left: 15px;
 	height: 45px;
+	color: #333;
 	border-radius: 16px;
-	background-color: #9ae8d560;
+	background-color: #9ae8d549;
+}
+#section-action input::placeholder{
+	color: rgba(51, 51, 51, 0.781)!important;
 }
 #section-action .cont-btns-form{
 	margin-top: 20px;	
@@ -2511,7 +2564,7 @@ a.animated-button.style2:hover:after {
 	content:'';
 	-webkit-appearance: none;
 	background-color: transparent;
-	border: 2px solid #0079bf;
+	border: 2px solid #64caac;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
 	padding: 10px;
 	display: inline-block;
@@ -2529,7 +2582,7 @@ a.animated-button.style2:hover:after {
 	left: 9px;
 	width: 6px;
 	height: 14px;
-	border: solid #0079bf;
+	border: solid #64caac;
 	border-width: 0 2px 2px 0;
 	transform: rotate(45deg);
 }
@@ -2592,6 +2645,90 @@ a.animated-button.style2:hover:after {
 	display: flex!important;
 	justify-content: center!important;
 }
+#section-msg .p-1{
+	padding-top: 10px!important;
+	width: 583px!important;
+	font-size: 24px!important;
+	width: auto;
+	text-align: center;
+}
+#section-msg .alert{
+	font-weight: bolder;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 0, 0.347);
+	background: rgba(255, 255, 0, 0.216);
+    padding: 4px 18px;
+    margin-top: 20px;
+    border-radius: 16px;
+}
+.lds-ring {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+.lds-ring div {
+	box-sizing: border-box;
+	display: block;
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+	border: 8px solid #fff;
+	border-radius: 50%;
+	animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+	animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+	animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+	animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+  
+@media (max-width: 992px) {
+	.cont-form-action form{
+		padding: 0;
+	}
+	.cont-form-action, #section-action .cont-info {
+		width: 100%!important;
+		margin-bottom: 0!important;
+	}
+	#section-action h2{
+		font-size: 24px!important;
+	}
+	#section-action p{
+		padding-top: 10px!important;
+		line-height: 1.4rem!important;
+		font-size: 16px!important;
+		margin-bottom: 0!important;
+	}
+	.p-1{
+		font-size: 24px!important;
+		width: auto;
+		text-align: center;
+	}
+	#section-msg .cont-boxSucces h2{
+		font-weight: bold!important;
+		text-align: center;
+		font-size: 35px !important;		
+		line-height: 2.3rem!important;
+	}
+	#section-msg .p-1{
+		width: 100%!important;
+	}
+}
 /*============================
  *      06. RESPONSIVE       *
  *===========================*/
@@ -2649,6 +2786,7 @@ a.animated-button.style2:hover:after {
 	    padding-right: 0;
     	padding-left: 0;
 	}
+
 	#section-slider1 .swiper-slide .slider-content .left p {
 	    padding-right: 100px;
 	}
@@ -2693,6 +2831,7 @@ a.animated-button.style2:hover:after {
 	}
 }
 @media only screen and ( min-width: 992px ) and ( max-width: 1199px ){
+	
 	#section-testimonial1 .item i {
 	    font-size: 15px;
 	    margin: 0 0px;
@@ -2705,6 +2844,7 @@ a.animated-button.style2:hover:after {
 
 @media only screen and ( min-width: 992px ){
 	/** NAVIGATION **/
+	
 	.navbar-1.navbar .dropdown-menu {
 		background-color: #fff;
 		border-radius: 0;
