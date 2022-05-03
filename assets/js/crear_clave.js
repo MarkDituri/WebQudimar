@@ -1,7 +1,16 @@
-alert("Javascript imported");
-
 
 document.addEventListener('DOMContentLoaded', function() {
+    let clave_1 = document.querySelector('#clave_1').value;    
+
+    formCrear.onsubmit = function(e) {
+        e.preventDefault();        
+        if(clave_1 == '' ){
+            document.querySelector("#msg-gral").focus();
+            document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Por favor ingrese una contraseña</div>";            
+            return false;
+        }
+    }
+
     $('#clave_1').keyup(function(e) {    
         //Validar clave segura        
         var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
@@ -11,17 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (false == enoughRegex.test($(this).val())) {
                 $('#msg-clave_1').html('Más caracteres.');
                 respClave = false;
-        } else if (strongRegex.test($(this).val())) {
-                $('#msg-clave_1').className = 'ok';
-                $('#msg-clave_1').html('Fuerte!');
+        } else if (strongRegex.test($(this).val())) {                
+                $('#msg-clave_1').html('<span class="ok">Fuerte!</span>');
                 respClave = true;
-        } else if (mediumRegex.test($(this).val())) {
-                $('#msg-clave_1').className = 'alert';
-                $('#msg-clave_1').html('Media!');
+        } else if (mediumRegex.test($(this).val())) {                
+                $('#msg-clave_1').html('<span class="media">Media!</span>');
                 respClave = true;
-        } else {
-                $('#msg-clave_1').className = 'error';
-                $('#msg-clave_1').html('Débil!');
+        } else {                
+                $('#msg-clave_1').html('<span class="error">Débil!</span>');
                 respClave = false;
         }
 
@@ -29,30 +35,30 @@ document.addEventListener('DOMContentLoaded', function() {
         let divLoading = document.querySelector("#divLoading");
         let formCrear = document.querySelector("#formCrear");
         formCrear.onsubmit = function(e) {
-            if(respClave === true){
-                alert("ES TRUE");                
-                e.preventDefault();        
+            if(respClave === true){                  
+                // e.preventDefault();        
                 let clave_1 = document.querySelector('#clave_1').value;
                 let clave_2 = document.querySelector('#clave_2').value;
                 let email = document.querySelector('#email').value;                
 
                 console.log("La clave 1es "+clave_1+" La clave 2: "+clave_2+" Mail: "+email);
 
-                if (clave_1 == '' || clave_2 == '' || email == '') {
-                    alert("Datos Mal cargados");
-                    // document.querySelector("#msg-gral").focus();
-                    // document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Todos los campos son obligatorios</div>";            
+                if (clave_1 == '' || clave_2 == '' || email == '') {                    
+                    document.querySelector("#msg-gral").focus();
+                    document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Todos los campos son obligatorios</div>";            
                     return false;           
                 } else {
                     if(clave_1 === clave_2){
                         alert("Deberia Mandar?");            
                     } else {
-                        alert("No hay coindicencia");
+                        document.querySelector("#msg-gral").focus();
+                        document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Tus contraseñas no coinciden</div>";            
                         return false;
                     }                  
                 }
             } else {
-                alert("No che");
+                document.querySelector("#msg-gral").focus();
+                document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Contraseña muy debil</div>";            
                 return false;
             }         
                             

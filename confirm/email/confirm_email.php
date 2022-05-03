@@ -1,13 +1,6 @@
 <?php
 // Comprobar y validar token del email, activa la cuenta
-$host = $_SERVER["HTTP_HOST"];
-if($host == "localhost"){                            
-    $base_url = "http://"."$host"."/webqudimar";                            
-} else {
-    $base_url = "https://"."$host";
-}
-
-
+require ("../../php/config.php");
 require ("../../php/conexion.php");
 
 if($_GET){
@@ -15,21 +8,22 @@ if($_GET){
         $token = $_GET["token"];
         $email = $_GET["email"];
       
-        $sql = "SELECT * FROM restaurantes WHERE email_user = '$email' AND token = '$token';";        
+        $sql = "SELECT * FROM restaurantes WHERE email_user = '$email' AND token = '$token' AND status < 2";        
 
         if ($result = $connect->query($sql)) {            
             $row_cnt = $result->num_rows;        
             if ($row_cnt == 0) {
+                // Cuenta status 1 = activa
                 $request = array('status' => false, 'value' => 'error', 'msg' => 'Hubo un error', 'p' => 'Al parecer los datos son incorrectos');                
             } else {                
-                $sql = "UPDATE restaurantes SET status = 1 WHERE email_user = '$email' AND token = '$token' AND status = 0;";                      
+                $sql = "UPDATE restaurantes SET status = 1 WHERE email_user = '$email' AND token = '$token' AND status < 2;";                      
                          
                 if ($result = $connect->query($sql)){
                     $row_cnt = $connect->affected_rows;                    
                     if ($row_cnt === 1) {
                         $request = array('status' => true, 'value' => 'activa', 'msg' => '¡Su cuenta ya esta activa!.', 'p' => 'Debera crear una contraseña para poder ingresar');                    
                     } else {
-                        $request = array('status' => false, 'value' => 'preactiva', 'msg' => '¡Su cuenta ya fue activada!.',  'p' => 'Al parecer su cuenta ya se activo previamente');                    
+                        $request = array('status' => true, 'value' => 'preactiva', 'msg' => '¡Su cuenta ya fue activada!.',  'p' => 'Al parecer su cuenta ya se activo previamente');                    
                     }                    
                 }
             }                                                                        
@@ -46,9 +40,6 @@ if($_GET){
 }
 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,7 +87,7 @@ if($_GET){
 	<!-- Section Navbar -->
 	<nav class="navbar-1 navbar navbar-expand-lg navbar-black">
         <div class="container navbar-container">
-            <a class="navbar-brand" href="<?= $base_url;?>/index.php"><img src="<?= $base_url;?>/assets/is/logo-2.png" alt="Appcraft"></a>
+            <a class="navbar-brand" href="<?= $base_url;?>/index.php"><img src="<?= $base_url;?>/assets/images/logo-2.png" alt="Appcraft"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                 	<li class="nav-item">
@@ -148,15 +139,16 @@ if($_GET){
 			<h2><?= $request['msg']?></h2>
 			<h5 class="p-1"><?= $request['p'];?><h5>
             <?php
-            if($request['value'] == 'activa'){ ?>                      
+            if($request['value'] == 'activa' || $request['value'] == 'preactiva'){ ?>                      
                 <div class="col-12">
-                    <a href="<?= $base_url;?>/confirm/crear_clave.php" class="shadow1 style3 input-btn bgscheme"><i class="fa-solid fa-key"></i>&nbsp Crear contraseña</a>
+                    <a href="<?= $base_url;?>/confirm/crear_clave.php?email=<?= $email?>&token=<?= $token?>" class="shadow1 style3 input-btn bgscheme">
+                        <i class="fa-solid fa-key"></i>
+                        &nbsp Crear contraseña
+                    </a>
                 </div>   
-            <?php } ?>            
-         
+            <?php } ?>                     
 		</div>
 	</div>
-
 
 	<!-- /.Section Slider 1 -->
 	<!-- Section Footer -->

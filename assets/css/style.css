@@ -1051,11 +1051,20 @@ a.animated-button.style2:hover:after {
 	font-size: 19px!important;
 	color: rgba(0, 0, 0, 0.513)!important;
 }
+#section-msg .cont-boxSucces{
+	padding-top: 12%;
+}
+#section-msg .cont-boxSucces h2, #section-msEmail .cont-boxSucces h2{
+	margin-top: 35px;
+}
+
 .cont-info h2, .cont-boxSucces h2{
 	font-weight: bold;
 }
-#section-msg .cont-boxSucces{
-	padding-top: 66px;
+
+.section_clave .cont-boxSucces{
+	padding-top: 16%;
+	padding-bottom: 66px;
 }
 /**
  * 4.1.2 Slider 2
@@ -1793,6 +1802,15 @@ a.animated-button.style2:hover:after {
 #section-contact1{
 	padding:110px 0;
 }
+.form-group .ok{
+	color: #00b800!important;
+}
+.form-group .media{
+	color: orange!important;
+}
+.form-group .error{
+	color: red;
+}
 #section-contact1 .left .form-group {
     margin-bottom: 25px;
 }
@@ -2504,8 +2522,8 @@ a.animated-button.style2:hover:after {
 	align-items: center;
 	height: 100%;
 }
-.cont-boxSucces h2{
-	margin-top: 50px;
+.section_clave .cont-boxSucces h2{
+	margin-top: 30px;
 }
 .cont-form-action{
 	width: 500px;	
@@ -2752,6 +2770,7 @@ a.animated-button.style2:hover:after {
 	margin-bottom: 0!important;
 }
 .section_clave .cont-info h2{
+	margin-bottom: 15px;
 	line-height: 1.1!important
 }
 /* .section_clave .cont-info . */

@@ -1,13 +1,6 @@
 <?php
-// Comprobar y validar token del email, activa la cuenta
-$host = $_SERVER["HTTP_HOST"];
-if($host == "localhost"){                            
-    $base_url = "http://"."$host"."/webqudimar";                            
-} else {
-    $base_url = "https://"."$host";
-}
-
-
+// Comprobar y validar token y email, ya activos
+require ("../php/config.php");
 require ("../php/conexion.php");
 
 if($_GET){
@@ -15,35 +8,29 @@ if($_GET){
         $token = $_GET["token"];
         $email = $_GET["email"];
       
-        $sql = "SELECT * FROM restaurantes WHERE email_user = '$email' AND token = '$token';";        
+        // Buscar cuenta confirmada status 1
+        $sql = "SELECT * FROM restaurantes WHERE email_user = '$email' AND token = '$token' AND status = 1;";        
 
         if ($result = $connect->query($sql)) {            
             $row_cnt = $result->num_rows;        
             if ($row_cnt == 0) {
                 $request = array('status' => false, 'value' => 'error', 'msg' => 'Hubo un error', 'p' => 'Al parecer los datos son incorrectos');                
-            } else {                
-                $sql = "UPDATE restaurantes SET status = 1 WHERE email_user = '$email' AND token = '$token' AND status = 0;";                      
-                         
-                if ($result = $connect->query($sql)){
-                    $row_cnt = $connect->affected_rows;                    
-                    if ($row_cnt === 1) {
-                        $request = array('status' => true, 'value' => 'activa', 'msg' => '¡Su cuenta ya esta activa!.', 'p' => 'Debera crear una contraseña para poder ingresar');                    
-                    } else {
-                        $request = array('status' => false, 'value' => 'preactiva', 'msg' => '¡Su cuenta ya fue activada!.',  'p' => 'Al parecer su cuenta ya se activo previamente');                    
-                    }                    
-                }
-            }                                                                        
-      
+            } else {                             
+                $request = array('status' => true, 'value' => 'activa', 'msg' => '¡Mostrar Crear contraseña!.', 'p' => 'Debera crear una contraseña para poder ingresar');                                
+            }                                                                              
         }  else {
             $request = array('status' => false, 'value' => 'sql', 'msg' => 'Hubo un error', 'p' => 'Hubo un error en el servidor');        
         }
-
     } else {
         $request = array('status' => false, 'value' => 'error', 'msg' => 'No hay datos para procesar',  'p' => '');        
     }    
 } else {
     $request = array('status' => false, 'value' => 'error', 'msg' => 'No hay datos para procesar', 'p' => '');        
 }
+
+// echo "<pre>";
+// var_dump($request);
+// echo "</pre>";
 
 ?>
 
@@ -126,12 +113,53 @@ if($_GET){
     </nav>
 	<!-- /.Section Navbar -->
 
+    <!-- <div class="container" id="section-msEmail">
+		<div class="col-12 cont-boxSucces">
+            <?php
+            if($request['value'] == 'error'){ ?>
+                <div>
+                    <img src="<?= $base_url;?>/assets/images/error-icon.png" alt="">
+                </div>
+            <?php } 
+            if($request['value'] == 'activa'){ ?>
+                <div class="SucessContainer">
+                    <div class="w3-modal-icon w3-modal-success animate">
+                        <span class="w3-modal-line w3-modal-tip animateSuccessTip"></span>
+                        <span class="w3-modal-line w3-modal-long animateSuccessLong"></span>
+                        <div class="w3-modal-placeholder"></div>
+                        <div class="w3-modal-fix"></div>
+                    </div>
+                </div>
+            <?php } ?>            
+
+			<h2><?= $request['msg']?></h2>
+			<h5 class="p-1"><?= $request['p'];?><h5>
+            <?php
+            if($request['value'] == 'activa'){ ?>                      
+                <div class="col-12">
+                    <a href="<?= $base_url;?>/confirm/crear_clave.php" class="shadow1 style3 input-btn bgscheme"><i class="fa-solid fa-key"></i>&nbsp Crear contraseña</a>
+                </div>   
+            <?php } ?>            
+         
+		</div>
+	</div> -->
+
 	<div class="container section_clave" id="section-action">
-        <form class="col-12" id="formCrear" onsubmit="enviar_validar()">
+        <?php
+        if($request['value'] == 'error'){ ?>
+          	<div class="col-12 cont-boxSucces">                
+                <img src="<?= $base_url;?>/assets/images/error-icon.png" alt="">
+                <h2><?= $request['msg']?></h2>
+                <h5 class="p-1"><?= $request['p'];?><h5>                    
+            </div>
+        <?php } 
+        if($request['value'] == 'activa'){ ?>
+        
+        <form class="col-12" id="formCrear" method="POST" action="<?= $base_url;?>/confirm/guardar_clave.php">
             <div class="row">
                 <div class="col-12 cont-info">						
                     <h2>Creá tu contraseña</h2>
-                    <p class="p-1">Contraseña vacia.</p>		
+                    <!-- <p class="p-1">Contraseña vacia.</p>		 -->
                 </div>
             </div>
 
@@ -140,7 +168,8 @@ if($_GET){
                 </div>                
                 <label class="col-12">Nueva contraseña</label>
                 <!--Email-->
-                <input type="hidden" class="form-control" name="email" id="email" value="marik@gotmailk.com" >
+                <input type="hidden" class="form-control" name="email" id="email" value="<?= $email;?>" >
+                <input type="hidden" class="form-control" name="token" id="token" value="<?= $token;?>" >
                 <div class="form-group col-sm-12 col-md-12 col-lg-12">
                     <input type="password" class="form-control" name="clave_1" id="clave_1" placeholder="Ingrese una clave" >
                     <div class="Mensaje" id="msg-clave_1"></div>
@@ -148,7 +177,7 @@ if($_GET){
                 <label class="col-12">Repetir la contraseña</label>			
                 <div class="form-group col-sm-12 col-md-12 col-lg-12">
                     <input type="password" class="form-control" name="clave_2" id="clave_2" placeholder="Repita la clave" >
-                    <div class="Mensaje" id="msg-clave_""></div>
+                    <div class="Mensaje" id="msg-clave_2"></div>
                 </div>
             </div>
 
@@ -161,6 +190,7 @@ if($_GET){
                 </div>
             </div>
         </form>
+        <?php } ?>
 	</div>
 
 
