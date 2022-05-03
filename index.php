@@ -171,23 +171,6 @@
 					<h2>Construido para tu comercio</h2>
 				</div>
 				<!-- Item -->
-				<div class="item ez-animate col-md-4" data-animation="fadeInLeft">					
-					<div class="title">Plan inicial</div>
-					<ul>
-						<li>1 Mes</li>
-						<li>QR automatico</li>
-						<li>Carta online</li>
-						<li>100 Productos</li>
-						<li>Pedidos ilimitadas</li>
-						<li>Soporte gratuito 24/7</li>
-					</ul>
-					<div class="price clscheme"><span class="currency">$</span> 760 <span class="duration">/m</span></div>
-					<div class="cta">
-						<a href="#" class="btn-1 btn-2-off shadow1 style3 brscheme">Comenzar Plan</a>
-					</div>
-				</div>
-				<!-- /.Item -->
-				<!-- Item -->
 				<div class="item ez-animate active selected col-md-4" data-animation="fadeInUp">					
 					<div class="title">Demo 30 dias</div>
 					<ul>
@@ -204,6 +187,24 @@
 					</div>
 				</div>
 				<!-- /.Item -->
+				<!-- Item -->
+				<div class="item ez-animate col-md-4" data-animation="fadeInLeft">					
+					<div class="title">Plan inicial</div>
+					<ul>
+						<li>1 Mes</li>
+						<li>QR automatico</li>
+						<li>Carta online</li>
+						<li>100 Productos</li>
+						<li>Pedidos ilimitadas</li>
+						<li>Soporte gratuito 24/7</li>
+					</ul>
+					<div class="price clscheme"><span class="currency">$</span> 760 <span class="duration">/m</span></div>
+					<div class="cta">
+						<a href="#" class="btn-1 btn-2-off shadow1 style3 brscheme">Comenzar Plan</a>
+					</div>
+				</div>
+				<!-- /.Item -->
+
 				<!-- Item -->
 				<!-- <div class="item ez-animate col-md-4" data-animation="fadeInRight">					
 					<div class="title">Startup Plan</div>

@@ -65,10 +65,7 @@
             </div>
             <a href="empezar.php" class="btn-1 shadow1 style3 bgscheme"><b>Crear cuenta</b></a>
             <button type="button" id="sidebarCollapse" class="navbar-toggler active" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+            	<i class="fa-solid fa-bars"></i>
             </button>
         </div>
         <!-- container -->
@@ -86,11 +83,15 @@
 
 		
 		<div class="row cont-form-action">
+			<div>
+				<div id="divLoading" class="col-12">
+					<img src="assets/images/loading-1.gif">
+				</div>
+			</div>
+
 			<form class="col-12" id="formCrear" onsubmit="enviar_validar()">
 				<div class="row">
-					<div id="divLoading" class="">
-						<iframe src="https://gifer.com/embed/7zxq" width=230 height=230.000 frameBorder="0" allowFullScreen></iframe>
-					</div>
+
 					<div class=" form-group col-sm-12 col-md-12 col-lg-12" id="msg-gral">						
 					</div>
 					<label class="col-12">Cuenta</label>
@@ -118,6 +119,7 @@
 					<div class="form-group form-group-box col-sm-12 col-md-12 col-lg-12">
 						<input type="checkbox" name="terminos" id="terminos">
 						<label for="terminos">Acepto los terminos y condiciones de uso.</label>
+						<div class="Mensaje" id="msg-terminos"></div>
 					</div>
 				</div>
 				<div class="cont-btns-form row">
@@ -148,7 +150,6 @@
 			<p class="p-1">Por favor, para activar su cuenta debe confirmar su correo electrónico,<p>
 			<div class="alert"><i class="fa-solid fa-envelope"></i> Revise su bandeja de entrada.</div>
 		</div>
-
 	</div>
 
 

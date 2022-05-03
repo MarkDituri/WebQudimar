@@ -12,7 +12,7 @@ if($_POST){
         $strEmail = strClean($_POST['email']);
         $intCelular = intval($_POST['celular']);
         $strNegocio= strClean($_POST['negocio']);
-        $strUrlNegocio = strClean($_POST['url_negocio']);        
+        $strURL = strClean($_POST['url_negocio']);        
         $request_producto = "";
   
         //Validar Email
@@ -22,7 +22,7 @@ if($_POST){
             $row_cnt = $result->num_rows;        
             if ($row_cnt == 0) {
                 // Validar URL
-                $sql = "SELECT url FROM restaurantes WHERE url = '$strUrlNegocio';";        
+                $sql = "SELECT url FROM restaurantes WHERE url = '$strURL';";        
 
                 if ($result = $connect->query($sql)) {            
                     $row_cnt = $result->num_rows;        
@@ -38,7 +38,6 @@ if($_POST){
             }                                              
           
         }       
-
    
         
         // echo "request email: " .$request."\n";             
@@ -53,18 +52,22 @@ if($_POST){
             $arrResponse = array('status' => false, 'msg' => 'Esta URL esta en uso', 'input' => 'url_negocio');
         }
         if($request === 0) {
-            // echo "ENTRO EL GUARDADO\n";                    
-            //Consultar base de datos
+            // Setteando datos de guardado
+            $codeIndex = GenerarCodeIndex();
+            $token = generarToken(20);
+
             $sql = "INSERT INTO restaurantes (id_restaurante,                                    
-                                        nombres,                                    
+                                        nombres,   
+                                        identificacion,                                 
                                         telefono,
                                         email_user,
                                         password,
                                         token,
                                         rolid,
-                                        url_logo, 
+                                        url_logo,
+                                        url,
                                         status) 
-                VALUES (null, '$strNombre', '$intCelular', '$strEmail', '', 'Token323123', 1,'portada.png', 1);";
+                VALUES (null, '$strNombre', '$codeIndex', '$intCelular', '$strEmail', '', '$token', 1,'portada.png', '$strURL', 0);";
             
             if($connect->query($sql) === true){
                 $request = 0;
@@ -75,8 +78,14 @@ if($_POST){
             if($request > 0 )
             {
                 $arrResponse = array('status' => false, 'msg' => '¡Ah ocurrido un error!.');
-            } else {
-                $arrResponse = array("status" => true, "msg" => 'Datos Guardados');
+            } else {                           
+                require ("mails/send/key_confirm.php");
+                if($resp_mail === true){
+                    $arrResponse = array("status" => true, "msg" => 'Datos Guardados');
+                } else {
+                    $arrResponse = array("status" => false, "msg" => 'Error en el envio de mail');
+                }
+           
             }            
         }
        
@@ -86,4 +95,24 @@ if($_POST){
 die();
 
 
+function GenerarCodeIndex(){
+    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+    $ala_code = substr(str_shuffle($permitted_chars), 0, 5);
+         
+    $time = time();    
+    $more_code = date("is", $time);
+    
+    $codeIndex = "$ala_code$more_code";
+    
+    return $codeIndex;
+}
+
+function generarToken($longitud)
+{
+    if ($longitud < 4) {
+        $longitud = 4;
+    }
+ 
+    return bin2hex(random_bytes(($longitud - ($longitud % 2)) / 2));
+}
 ?>
