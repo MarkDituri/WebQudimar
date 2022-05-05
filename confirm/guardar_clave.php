@@ -8,9 +8,8 @@ if($_POST){
         $request = array("status" => false, "msg" => 'Datos incorrectos.');
     } else {
         $email = $_POST["email"];
-        $clave = $_POST["clave_1"];
+        $clave = hash("SHA256",$_POST['clave_1']);        
         $token = $_POST["token"];
-        $clave = md5($clave);
 
         // Guarda clave con MD5 y status 2 login
         $sql = "UPDATE restaurantes SET status = 2, password = '$clave' WHERE email_user = '$email' AND token = '$token' AND status = 1;";                      

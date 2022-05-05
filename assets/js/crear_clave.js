@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 respClave = false;
         }
 
-        //NUEVO USUARIO
+        // Crear clave
         let divLoading = document.querySelector("#divLoading");
         let formCrear = document.querySelector("#formCrear");
         formCrear.onsubmit = function(e) {
@@ -39,9 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // e.preventDefault();        
                 let clave_1 = document.querySelector('#clave_1').value;
                 let clave_2 = document.querySelector('#clave_2').value;
-                let email = document.querySelector('#email').value;                
-
-                console.log("La clave 1es "+clave_1+" La clave 2: "+clave_2+" Mail: "+email);
+                let email = document.querySelector('#email').value;                                
 
                 if (clave_1 == '' || clave_2 == '' || email == '') {                    
                     document.querySelector("#msg-gral").focus();
@@ -49,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     return false;           
                 } else {
                     if(clave_1 === clave_2){
-                        alert("Deberia Mandar?");            
+                        //Aca envia evento
+                        return true;   
                     } else {
                         document.querySelector("#msg-gral").focus();
                         document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Tus contraseñas no coinciden</div>";            
@@ -60,24 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector("#msg-gral").focus();
                 document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Contraseña muy debil</div>";            
                 return false;
-            }         
-                            
-        }
-        
-        console.log(respClave);      
+            }                                     
+        }                   
         return false;  
     });
 })
-
-// function ValidarMail(){
-  
-
-// }
-
-
-// console.log(ValidarMail());
-
-// if(ValidarMail() === true){
-//     alert("Dio TRUE");
-// }
-
