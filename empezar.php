@@ -9,13 +9,13 @@
     <!-- First Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Pgae Description -->
-    <meta name="description" content="Appcraft portfolio Template">
+    <meta name="description" content="Qudimar portfolio Template">
     <!-- Page Kewords -->
-    <meta name="keywords" content="Appcraft">
+    <meta name="keywords" content="Qudimar">
     <!-- Site Author -->
-    <meta name="author" content="Appcraft">
+    <meta name="author" content="Qudimar">
     <!-- Title -->
-    <title>Home 1 | Appcraft</title>
+    <title>Home 1 | Qudimar</title>
 	<!--FontAwesome-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- Favicon -->
@@ -44,7 +44,7 @@
 	<!-- Section Navbar -->
 	<nav class="navbar-1 navbar navbar-expand-lg navbar-black">
         <div class="container navbar-container">
-            <a class="navbar-brand" href="index.php"><img src="assets/images/logo-2.png" alt="Appcraft"></a>
+            <a class="navbar-brand" href="index.php"><img src="assets/images/logo-2.png" alt="Qudimar"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                 	<li class="nav-item">
@@ -63,7 +63,9 @@
 	                </li>
                 </ul>
             </div>
-            <a href="empezar.php" class="btn-1 shadow1 style3 bgscheme"><b>Crear cuenta</b></a>
+
+            <a href="empezar.php" class="btn-1 style3 bgscheme"><b>Crear cuenta</b></a>
+			<a href="menu/admin/login" class="btn-1 style3 brscheme" style="max-width: 125px;"><b>Ingresar</b></a>
             <button type="button" id="sidebarCollapse" class="navbar-toggler active" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
             	<i class="fa-solid fa-bars"></i>
             </button>
@@ -83,28 +85,31 @@
 
 		
 		<div class="row cont-form-action">
-			<div>
-				<div id="divLoading" class="col-12">
-					<img src="assets/images/loading-1.gif">
-				</div>
-			</div>
+	
+			<div id="divLoading" class="col-12">
+				<img src="assets/images/loading-1.gif">
+			</div>		
 
 			<form class="col-12" id="formCrear" onsubmit="enviar_validar()">
 				<div class="row">
 
-					<div class=" form-group col-sm-12 col-md-12 col-lg-12" id="msg-gral">						
+					<div class="form-group col-sm-12 col-md-12 col-lg-12" id="msg-gral">						
 					</div>
 					<label class="col-12">Cuenta</label>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Tu nombre" >
+						<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" >
 						<div class="Mensaje" id="msg-nombre"></div>
 					</div>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="email" class="form-control" name="email" id="email" placeholder="Tu Email" >
+						<input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" >
+						<div class="Mensaje" id="msg-apellido"></div>
+					</div>
+					<div class="form-group col-sm-12 col-md-12 col-lg-12">
+						<input type="email" class="form-control" name="email" id="email" placeholder="Correo eléctronico" >
 						<div class="Mensaje" id="msg-email"></div>
 					</div>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="number" class="form-control" name="celular" id="celular" placeholder="Tu Celular" >
+						<input type="number" class="form-control" name="celular" id="celular" placeholder="Celular/Teléfono" >
 						<div class="Mensaje" id="msg-celular"></div>
 					</div>
 					<label class="col-12">Tu comercio</label>
@@ -112,10 +117,6 @@
 						<input type="text" class="form-control" name="negocio" id="negocio" placeholder="Nombre de tu Negocio" >
 						<div class="Mensaje" id="msg-negocio"></div>
 					</div>					
-					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="text" class="form-control" name="url_negocio" id="url_negocio" placeholder="/mi-comercio" >
-						<div class="Mensaje" id="msg-url_negocio"></div>
-					</div>
 					<div class="form-group form-group-box col-sm-12 col-md-12 col-lg-12">
 						<input type="checkbox" name="terminos" id="terminos">
 						<label for="terminos">Acepto los terminos y condiciones de uso.</label>
@@ -124,10 +125,10 @@
 				</div>
 				<div class="cont-btns-form row">
 					<div class="form-group col-md-6 col-12">
-						<button type="submit" class="shadow1 style3 input-btn bgscheme">Crear cuenta</button>
+						<button type="submit" class="style3 input-btn bgscheme">Crear cuenta</button>
 					</div>
 					<div class="form-group col-md-6 col-12">
-						<button type="button" class="shadow1 style3 input-btn brscheme">Ya tengo cuenta</button>
+						<a href="menu/admin/login" type="button" class="style3 input-btn brscheme">Ya tengo cuenta</a>
 					</div>
 				</div>
 			</form>
@@ -160,7 +161,7 @@
 			<div class="footer-widget">
 				<div class="row">
 					<div class="left col-md-6">
-						<a href="index.php"><img src="assets/images/logo.png" alt="Appcraft"></a>
+						<a href="index.php"><img src="assets/images/logo.png" alt="Qudimar"></a>
 					</div>
 					<div class="right col-md-6">
 						<div class="social-links">

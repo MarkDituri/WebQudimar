@@ -17,7 +17,7 @@ if($_POST){
         if ($result = $connect->query($sql)){
             $row_cnt = $connect->affected_rows;                    
             if ($row_cnt === 1) {
-                header("location:".$base_url."/admin/login");  
+                header("location:".$base_url."/menu/admin/login");  
                 $request = array('status' => true, 'value' => 'activa', 'msg' => '¡Su contraseña ah sido guardadad con exito.', 'p' => 'Sera redirijido al Login...');                    
             } else {
                 $request = array('status' => false, 'value' => 'preactiva', 'msg' => '¡Su cuenta ya fue activada!.',  'p' => 'Al parecer su cuenta ya se activo previamente');                    
@@ -26,9 +26,5 @@ if($_POST){
         }
     }      
 } 
-
-echo "<pre>";
-var_dump($request);
-echo "</pre>";
 
 ?>

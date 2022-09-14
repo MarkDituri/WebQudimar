@@ -6,19 +6,19 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
    
         let strNombre = document.querySelector('#nombre').value;
+        let strApellido = document.querySelector('#apellido').value;
         let strEmail = document.querySelector('#email').value;
         let strCelular = document.querySelector('#celular').value;
-        let strNegocios = document.querySelector('#negocio').value;
-        let strUrlNegocio = document.querySelector('#url_negocio').value;
+        let strNegocios = document.querySelector('#negocio').value;        
         let checkTerminos = document.querySelector('#terminos');
 
-        if (strNombre == '' || strEmail == '' || strCelular == '' || strNegocios == '' || strUrlNegocio == '') {
+        if (strNombre == '' || strApellido == '' || strEmail == '' || strCelular == '' || strNegocios == '' ) {
             document.querySelector("#msg-gral").focus();
             document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Todos los campos son obligatorios</div>";            
             return false;           
         } else {
             document.querySelector("#msg-gral").innerHTML = "";                  
-            if(validarNombre(strNombre) === false || validarEmail(strEmail) === false || validarCelular(strCelular) === false || validarNegocio(strNegocios) === false || validarUrlNegocio(strUrlNegocio) === false || validarTerminos(checkTerminos) === false){                
+            if(validarNombre(strNombre) === false || validarApellido(strApellido) === false  || validarEmail(strEmail) === false || validarCelular(strCelular) === false || validarNegocio(strNegocios) === false || validarTerminos(checkTerminos) === false){                
                 return false;
             } else {                               
                 divLoading.style.display = "flex";
@@ -38,11 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 document.querySelector("#section-msg").style.display = "flex";
                             } 
                             else {                                
-                                if(objData.input === 'email'){
-                                    document.querySelector("#url_negocio").classList.remove("error-inp");
-                                } else if (objData.input === 'url_negocio'){
-                                    document.querySelector("#email").classList.remove("error-inp");
-                                }
+                                // if(objData.input === 'email'){
+                                //     document.querySelector("#url_negocio").classList.remove("error-inp");
+                                // } else if (objData.input === 'url_negocio'){
+                                //     document.querySelector("#email").classList.remove("error-inp");
+                                // }
                                 document.querySelector("#"+objData.input).classList.add("error-inp");
                                 document.querySelector("#"+objData.input).focus();
                                 document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>"+objData.msg+"</div>";            
@@ -63,12 +63,23 @@ document.addEventListener('DOMContentLoaded', function() {
 // Funciones
 // Validacion Nombre
 function validarNombre(strNombre) {
-    if (strNombre.length > 4){  
+    if (strNombre.length > 3){  
         document.querySelector('#msg-nombre').innerHTML = "";
         document.querySelector('#nombre').classList.remove("error-inp");
     } else {
         document.querySelector('#msg-nombre').innerHTML = "<span style='color: red'>Nombre demasiado corto</span>";
         document.querySelector('#nombre').classList.add("error-inp");
+        return false;
+    }
+}
+// Validar Apellido
+function validarApellido(strApellido) {
+    if (strApellido.length > 3){  
+        document.querySelector('#msg-apellido').innerHTML = "";
+        document.querySelector('#apellido').classList.remove("error-inp");
+    } else {
+        document.querySelector('#msg-apellido').innerHTML = "<span style='color: red'>Apellido demasiado corto</span>";
+        document.querySelector('#apellido').classList.add("error-inp");
         return false;
     }
 }
@@ -109,39 +120,39 @@ function validarNegocio(strNegocios) {
 }
 
 
-// Validacion URL negocio
-var url_negocio = document.getElementById("url_negocio")
-url_negocio.addEventListener("input", function (event) {
-    validarCarNegocio(this, "[0-9a-z]")
-})
+// // Validacion URL negocio
+// var url_negocio = document.getElementById("url_negocio")
+// url_negocio.addEventListener("input", function (event) {
+//     validarCarNegocio(this, "[0-9a-z]")
+// })
 
-function validarCarNegocio(strUrlNegocio, patron) {
-    var texto = strUrlNegocio.value
-    var letras = texto.split("")
-    for (var x in letras) {
-        var letra = letras[x]
-        if (!(new RegExp(patron, "i")).test(letra)) {
-            letras[x] = ""
-        }
-    }
-    strUrlNegocio.value = letras.join("")
-}
+// function validarCarNegocio(strUrlNegocio, patron) {
+//     var texto = strUrlNegocio.value
+//     var letras = texto.split("")
+//     for (var x in letras) {
+//         var letra = letras[x]
+//         if (!(new RegExp(patron, "i")).test(letra)) {
+//             letras[x] = ""
+//         }
+//     }
+//     strUrlNegocio.value = letras.join("")
+// }
 
-function validarUrlNegocio(strUrlNegocio){    
-    if (strUrlNegocio.length >= 4){
-        document.querySelector('#msg-url_negocio').innerHTML = "";
-        document.querySelector('#url_negocio').classList.remove("error-inp");
-    } else {
-        document.querySelector('#msg-url_negocio').innerHTML = "<span style='color: red'>La URL es demasiado corta</span>";
-        document.querySelector('#url_negocio').classList.add("error-inp");
-        return false;
-    }
-    if (strUrlNegocio.length >= 20){
-        document.querySelector('#msg-url_negocio').innerHTML = "<span style='color: red'>La URL es demasiado larga</span>";
-        document.querySelector('#url_negocio').classList.add("error-inp");
-        return false;
-    }
-}
+// function validarUrlNegocio(strUrlNegocio){    
+//     if (strUrlNegocio.length >= 4){
+//         document.querySelector('#msg-url_negocio').innerHTML = "";
+//         document.querySelector('#url_negocio').classList.remove("error-inp");
+//     } else {
+//         document.querySelector('#msg-url_negocio').innerHTML = "<span style='color: red'>La URL es demasiado corta</span>";
+//         document.querySelector('#url_negocio').classList.add("error-inp");
+//         return false;
+//     }
+//     if (strUrlNegocio.length >= 20){
+//         document.querySelector('#msg-url_negocio').innerHTML = "<span style='color: red'>La URL es demasiado larga</span>";
+//         document.querySelector('#url_negocio').classList.add("error-inp");
+//         return false;
+//     }
+// }
 
 // Validacion Terminos
 function validarTerminos(checkTerminos) {    

@@ -52,13 +52,13 @@ if($_GET){
     <!-- First Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Pgae Description -->
-    <meta name="description" content="Appcraft portfolio Template">
+    <meta name="description" content="Qudimar portfolio Template">
     <!-- Page Kewords -->
-    <meta name="keywords" content="Appcraft">
+    <meta name="keywords" content="Qudimar">
     <!-- Site Author -->
-    <meta name="author" content="Appcraft">
+    <meta name="author" content="Qudimar">
     <!-- Title -->
-    <title>Home 1 | Appcraft</title>
+    <title>Home 1 | Qudimar</title>
 	<!--FontAwesome-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- Favicon -->
@@ -87,7 +87,7 @@ if($_GET){
 	<!-- Section Navbar -->
 	<nav class="navbar-1 navbar navbar-expand-lg navbar-black">
         <div class="container navbar-container">
-            <a class="navbar-brand" href="<?= $base_url;?>/index.php"><img src="<?= $base_url;?>/assets/images/logo-2.png" alt="Appcraft"></a>
+            <a class="navbar-brand" href="<?= $base_url;?>/index.php"><img src="<?= $base_url;?>/assets/images/logo-2.png" alt="Qudimar"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                 	<li class="nav-item">
@@ -158,7 +158,7 @@ if($_GET){
 				<div class="row">
 					<div class="left col-md-6">
 
-						<a href="index.php"><img src="<?= $base_url;?>/assets/images/logo.png" alt="Appcraft"></a>
+						<a href="index.php"><img src="<?= $base_url;?>/assets/images/logo.png" alt="Qudimar"></a>
 					</div>
 					<div class="right col-md-6">
 						<div class="social-links">

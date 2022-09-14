@@ -15,7 +15,7 @@ if($host == "modian.tech"){
     $db_name = "u878594977_digicard";
 }
 
-$connect = new mysqli("localhost", "$db_user", "$db_pass", "$db_name");
+$connect = new mysqli("$db_server", "$db_user", "$db_pass", "$db_name");
 
 if ($connect->connect_errno) {
     die("error de conexión: " . $connect->connect_error);

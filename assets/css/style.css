@@ -1,6 +1,6 @@
 /* ==============================================================
 
-Theme Name	: Appcraft HTML
+Theme Name	: Qudimar HTML
 Theme URI	: Minimal Themes
 Author		: Minimal Themes
 Author URI	: https://themeforest.net/user/minimalthemes
@@ -370,7 +370,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shadow1{
-	box-shadow: 0 5px 35px -16px #64caac;
+	/* box-shadow: 0 5px 35px -16px #64caac; */
+	box-shadow: 0 5px 35px -16px #64caac!important;
 }
 
 
@@ -854,7 +855,7 @@ a.animated-button.style2:hover:after {
 }
 
 .navbar-1 .btn-1{
-	margin-left: 25px;
+    margin-left: 14px;
 }
 
 /**
@@ -1802,6 +1803,7 @@ a.animated-button.style2:hover:after {
 #section-contact1{
 	padding:110px 0;
 }
+
 .form-group .ok{
 	color: #00b800!important;
 }
@@ -2431,7 +2433,7 @@ a.animated-button.style2:hover:after {
 #section-footer{
 	background-image: url(../images/bg-footer.png);
 	background-repeat: no-repeat;
-	background-position: bottom;
+	background-position: top;
 	background-size: cover;
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
@@ -2472,8 +2474,7 @@ a.animated-button.style2:hover:after {
     /* background: #fff; */
     z-index: 999;
 	min-width: 80px;
-    height: 580px;
-    min-width: 580px;
+    height: 580px;    
  }
  #divLoading img {
 	filter: grayscale(0.06) hue-rotate(-44deg) sepia(0.02) saturate(2.3) blur(0.1px) brightness(22.1) contrast(0.5);
@@ -2486,11 +2487,9 @@ a.animated-button.style2:hover:after {
  .Mensaje{
 	padding: 0 15px;
 	padding-top: 3px;
-
  }
 
  .msg-gral{	
-
 	border-left: 2px solid #c60000;
 	color: #c60000;
 	padding: 9px 15px;
@@ -2503,6 +2502,9 @@ a.animated-button.style2:hover:after {
 .bgscheme{
 	font-weight: bold!important;
 	color: #265444!important;	
+}
+.bgscheme:hover{
+	box-shadow: 0 5px 35px -16px #64caac!important;
 }
 #section-action, #section-msg{	
 	display: flex;
@@ -2555,6 +2557,9 @@ a.animated-button.style2:hover:after {
 	margin-top: 20px;	
 }
 #section-action .input-btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	cursor: pointer;
 	border-radius: 1.4rem;
 	width: 100%;
@@ -2697,7 +2702,6 @@ a.animated-button.style2:hover:after {
 	font-size: 24px!important;
 	width: auto;
 	text-align: center;
-
 }
 #section-msg .alert{	
     font-weight: bold;
