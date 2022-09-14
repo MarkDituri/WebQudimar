@@ -38,7 +38,7 @@ if($_GET){
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Uniocde -->
     <meta charset="utf-8">
@@ -48,13 +48,13 @@ if($_GET){
     <!-- First Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Pgae Description -->
-    <meta name="description" content="Appcraft portfolio Template">
+    <meta name="description" content="Qudimar | Creá tu contraseña">
     <!-- Page Kewords -->
-    <meta name="keywords" content="Appcraft">
+    <meta name="keywords" content="Qudimar">
     <!-- Site Author -->
-    <meta name="author" content="Appcraft">
+    <meta name="author" content="Qudimar">
     <!-- Title -->
-    <title>Home 1 | Appcraft</title>
+    <title>Qudimar | Creá tu contraseña</title>
 	<!--FontAwesome-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- Favicon -->
@@ -65,15 +65,10 @@ if($_GET){
     <link rel="stylesheet" href="<?= $base_url;?>/assets/css/swiper.min.css" type="text/css">
     <!-- Fonts -->
     <link rel="stylesheet" href="<?= $base_url;?>/assets/fonts/fontawesome/font-awesome.min.css">
-    <!-- OWL Carousel -->
-    <link rel="stylesheet" href="<?= $base_url;?>/assets/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="<?= $base_url;?>/assets/css/owl.theme.default.min.css" type="text/css">
     <!-- CSS Animate -->
     <link rel="stylesheet" href="<?= $base_url;?>/assets/css/animate.min.css" type="text/css">
     <!-- Style -->
-    <link rel="stylesheet" href="<?= $base_url;?>/assets/css/style.css" type="text/css">
-	<!--SCSS-->
-	<link rel="stylesheet" href="<?= $base_url;?>/assets/css/succes.css" type="text/css">
+    <link rel="stylesheet" href="<?= $base_url;?>/assets/css/style.css" type="text/css">	
 </head>
 <body>	
 	<?php
@@ -83,7 +78,7 @@ if($_GET){
 	<!-- Section Navbar -->
 	<nav class="navbar-1 navbar navbar-expand-lg navbar-black">
         <div class="container navbar-container">
-            <a class="navbar-brand" href="<?= $base_url;?>/index.php"><img src="<?= $base_url;?>/assets/images/logo-2.png" alt="Appcraft"></a>
+            <a class="navbar-brand" href="<?= $base_url;?>/index.php"><img src="<?= $base_url;?>/assets/images/logo-2.png" alt="Qudimar"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                 	<li class="nav-item">
@@ -159,13 +154,13 @@ if($_GET){
             <div class="row">
                 <div class="col-12 cont-info">						
                     <h2>Creá tu contraseña</h2>
+                    <p>La contraseña debe tener un mínimo de 6 caracteres, con letras y números.</p>                    
                     <!-- <p class="p-1">Contraseña vacia.</p>		 -->
                 </div>
             </div>
 
             <div class="row" id="cont-formClave">
-                <div class=" form-group col-sm-12 col-md-12 col-lg-12" id="msg-gral">						
-                </div>                
+                <div class=" form-group col-sm-12 col-md-12 col-lg-12" id="msg-gral"></div>           
                 <label class="col-12">Nueva contraseña</label>
                 <!--Email-->
                 <input type="hidden" class="form-control" name="email" id="email" value="<?= $email;?>" >
@@ -186,7 +181,7 @@ if($_GET){
                     <button type="submit" class="shadow1 style3 input-btn bgscheme">Crear cuenta</button>
                 </div>
                 <div class="form-group col-md-6 col-12">
-                    <button type="button" class="shadow1 style3 input-btn brscheme">Ya tengo cuenta</button>
+                    <a href="../menu/admin/login" target="_blank" type="button" class="shadow1 btn style3 input-btn brscheme">Ya tengo cuenta</a>
                 </div>
             </div>
         </form>
@@ -202,7 +197,7 @@ if($_GET){
 				<div class="row">
 					<div class="left col-md-6">
 
-						<a href="index.php"><img src="<?= $base_url;?>/assets/images/logo.png" alt="Appcraft"></a>
+						<a href="index.php"><img src="<?= $base_url;?>/assets/images/logo.png" alt="Qudimar"></a>
 					</div>
 					<div class="right col-md-6">
 						<div class="social-links">

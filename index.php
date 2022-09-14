@@ -7,7 +7,7 @@
 	<!-- Section Navbar -->
 	<nav class="navbar-1 navbar navbar-expand-lg">
         <div class="container navbar-container">
-            <a class="navbar-brand" href="index.php"><img src="assets/images/logo.png" alt="Appcraft"></a>
+            <a class="navbar-brand" href="index.php"><img src="assets/images/logo.png" alt="logo-qudimar"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                 	<li class="nav-item">
@@ -26,7 +26,9 @@
 	                </li>
                 </ul>
             </div>
-            <a href="empezar.php" class="btn-1 shadow1 style3 bgscheme"><b>Crear cuenta</b></a>
+			
+            <a href="empezar.php" class="btn-1 style3 bgscheme"><b>Crear cuenta</b></a>
+			<a href="menu/admin/login" class="btn-1 btn-2-off style3 brscheme" style="max-width: 125px;"><b>Ingresar</b></a>
             <button type="button" id="sidebarCollapse" class="navbar-toggler active" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -49,12 +51,12 @@
 									<h1 class="ez-animate" data-animation="fadeInLeft">Tu carta online lista<br>para escanear</h1>
 									<p class="ez-animate" data-animation="fadeInLeft">Esta tecnología te permite vincular a tus clientes con un menú interactivo de manera fácil y rápida.</p>
 									<div class="cont-info right my-auto col-sm-12 col-md-6" id="cont-btns-main">														
-										<a href="empezar.php" class="btn-2 shadow1 style3 bgscheme">Empezar gratis</a>
-										<a href="#" class="btn-2 btn-2-off shadow1 style3 brscheme"><i class="icon-btn fa-solid fa-play"></i> Probar Demo</a>
+										<a href="empezar.php" class="btn-2 style3 bgscheme">Empezar gratis</a>
+										<a href="#" class="btn-2 btn-2-off style3 brscheme"><i class="icon-btn fa-solid fa-play"></i> Probar Demo</a>
 									</div>
 								</div>
 								<div class="right ez-animate col-12 col-sm-12 col-md-5" data-animation="fadeInRight">
-									<img class="img-fluid" src="assets/images/img-1.png" alt="Appcraft">
+									<img class="img-fluid" src="assets/images/img-1.png" alt="Qudimar">
 								</div>
 							</div>
 						</div>
@@ -83,7 +85,7 @@
 							<!-- Item -->
 							<div class="swiper-slide">
 								<div class="item">
-									<img src="assets/images/img-icon1.png" alt="Appcraft">
+									<img src="assets/images/img-icon1.png" alt="Qudimar">
 									<h3>Ofrecé tu Menu QR Profesional</h3>
 									<p>Direct mailing research development buyer iPad validation startup social proof learning curve user experience analytics</p>
 								</div>
@@ -92,7 +94,7 @@
 							<!-- Item -->
 							<div class="swiper-slide">
 								<div class="item">
-									<img src="assets/images/img-icon2.png" alt="Appcraft">
+									<img src="assets/images/img-icon2.png" alt="Qudimar">
 									<h3>Tus clientes ordenan desde su celular</h3>
 									<p>Direct mailing research development buyer iPad validation startup social proof learning curve user experience analytics</p>
 								</div>
@@ -101,7 +103,7 @@
 							<!-- Item -->
 							<div class="swiper-slide">
 								<div class="item">
-									<img src="assets/images/img-icon3.png" alt="Appcraft">
+									<img src="assets/images/img-icon3.png" alt="Qudimar">
 									<h3>Recibís las comandas a tu Central</h3>
 									<p>Direct mailing research development buyer iPad validation startup social proof learning curve user experience analytics</p>
 								</div>
@@ -122,15 +124,15 @@
 				<div class="row">
 					<div class="left col-sm-12 col-md-6">
 						<div class="img-container">
-							<img class="circleicon1 ez-animate" src="assets/images/img-circleicon1.png" alt="Appcraft" data-animation="fadeInUp">
-							<img class="img-fluid ez-animate" src="assets/images/img-2.png" alt="Appcraft" data-animation="fadeInLeft">
+							<img class="circleicon1 ez-animate" src="assets/images/img-circleicon1.png" alt="Qudimar" data-animation="fadeInUp">
+							<img class="img-fluid ez-animate" src="assets/images/img-2.png" alt="Qudimar" data-animation="fadeInLeft">
 						</div>
 					</div>
 					<div class="cont-info right my-auto col-sm-12 col-md-6">						
 						<h2>Menú interactivo</h2>
 						<p class="p-1">No solo enlista todos tus productos, sino que también tus clientes podrán armar y confirmar la orden desde la misma carta online.</p>
 						<p class="p-2">Diseñado para tus comenzales, interfaz moderna y super intuitiva.</p>
-						<a href="#" class="btn-2 shadow1 style3 bgscheme"><i class="icon-btn fa-solid fa-play"></i> Probar Demo</a>
+						<a href="#" class="btn-2 style3 bgscheme"><i class="icon-btn fa-solid fa-play"></i> Probar Demo</a>
 					</div>
 				</div>
 			</div>
@@ -147,12 +149,12 @@
 							Recibís las comandas de los pedidos listas para imprimir 
 							<i class="fa-solid fa-print"></i></p>
 						<p class="p-2">Estadisticas - Pedido</p>
-						<a href="empezar.php" class="btn-2 shadow1 style3 bgscheme">Empezar gratis</a>
+						<a href="empezar.php" class="btn-2 style3 bgscheme">Empezar gratis</a>
 					</div>
 					<div class="left col-sm-12 col-md-6">
 						<div class="img-container">
-							<img class="circleicon1 ez-animate" src="assets/images/img-circleicon2.png" alt="Appcraft" data-animation="fadeInUp">
-							<img class="img-fluid ez-animate" src="assets/images/img-3.png" alt="Appcraft" data-animation="fadeInRight">
+							<img class="circleicon1 ez-animate" src="assets/images/img-circleicon2.png" alt="Qudimar" data-animation="fadeInUp">
+							<img class="img-fluid ez-animate" src="assets/images/img-3.png" alt="Qudimar" data-animation="fadeInRight">
 						</div>
 					</div>
 				</div>
@@ -183,7 +185,7 @@
 					</ul>
 					<div class="price clscheme"><span class="currency">$</span> 0 <span class="duration">/m</span></div>
 					<div class="cta">
-						<a href="#" class="btn-1 shadow1 style3 bgscheme">Comenzar Prueba</a>
+						<a href="#" class="btn-1 style3 bgscheme">Comenzar Prueba</a>
 					</div>
 				</div>
 				<!-- /.Item -->
@@ -200,7 +202,7 @@
 					</ul>
 					<div class="price clscheme"><span class="currency">$</span> 760 <span class="duration">/m</span></div>
 					<div class="cta">
-						<a href="#" class="btn-1 btn-2-off shadow1 style3 brscheme">Comenzar Plan</a>
+						<a href="#" class="btn-1 btn-2-off style3 brscheme">Comenzar Plan</a>
 					</div>
 				</div>
 				<!-- /.Item -->
@@ -237,7 +239,7 @@
 				<div class="form col-12 ez-animate" data-animation="fadeInUp">
 					<form action="#" id="SubscribeForm">
 						<input type="email" name="yourEmail" placeholder="Ingrese su correo eléctronico" required="">
-						<button type="submit" class="shadow1 bgscheme">Suscribirme</button>
+						<button type="submit" class="bgscheme">Suscribirme</button>
 					</form>
 				</div>
 			</div>
@@ -252,8 +254,8 @@
 					<h1>Registrá tu comercio</h1>
 					<p>y comience con una prueba gratuita de 1 mes para su negocio</p>
 					<div class="cont-info right my-auto col-sm-12 col-md-6" id="cont-btns-main">														
-						<a href="empezar.php" class="btn-2 shadow1 style3 bgscheme">Empezar gratis</a>
-						<a href="#" class="btn-2 btn-2-off shadow1 style3 brscheme"><i class="icon-btn fa-solid fa-play"></i> Probar Demo</a>
+						<a href="empezar.php" class="btn-2 style3 bgscheme">Empezar gratis</a>
+						<a href="#" class="btn-2 btn-2-off style3 brscheme"><i class="icon-btn fa-solid fa-play"></i> Probar Demo</a>
 					</div>
 				</div>
 			</div>
@@ -266,7 +268,7 @@
 			<div class="footer-widget">
 				<div class="row">
 					<div class="left col-md-6">
-						<a href="index.php"><img src="assets/images/logo.png" alt="Appcraft"></a>
+						<a href="index.php"><img src="assets/images/logo.png" alt="Qudimar"></a>
 					</div>
 					<div class="right col-md-6">
 						<div class="social-links">

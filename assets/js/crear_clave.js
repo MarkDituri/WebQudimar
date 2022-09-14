@@ -1,10 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     let clave_1 = document.querySelector('#clave_1').value;    
+    let clave_2 = document.querySelector('#clave_2').value;    
 
     formCrear.onsubmit = function(e) {
         e.preventDefault();        
-        if(clave_1 == '' ){
+        if(clave_1 == '' ||  clave_2 == ''){
             document.querySelector("#msg-gral").focus();
             document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Por favor ingrese una contraseña</div>";            
             return false;
@@ -17,25 +18,23 @@ document.addEventListener('DOMContentLoaded', function() {
         var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
         var enoughRegex = new RegExp("(?=.{6,}).*", "g");
         var respClave;
+
         if (false == enoughRegex.test($(this).val())) {
-                $('#msg-clave_1').html('Más caracteres.');
-                respClave = false;
-        } else if (strongRegex.test($(this).val())) {                
-                $('#msg-clave_1').html('<span class="ok">Fuerte!</span>');
-                respClave = true;
+            $('#msg-clave_1').html('Al menos 6 caracteres.');
+            respClave = false;
         } else if (mediumRegex.test($(this).val())) {                
-                $('#msg-clave_1').html('<span class="media">Media!</span>');
-                respClave = true;
-        } else {                
-                $('#msg-clave_1').html('<span class="error">Débil!</span>');
-                respClave = false;
+            $('#msg-clave_1').html('<span class="ok">Contraseña válida.</span>');
+            respClave = true;
+        } else {
+            $('#msg-clave_1').html('<span class="error">Contraseña débil.</span>');
+            respClave = false;
         }
 
         // Crear clave
         let divLoading = document.querySelector("#divLoading");
         let formCrear = document.querySelector("#formCrear");
         formCrear.onsubmit = function(e) {
-            if(respClave === true){                  
+            if(respClave === true){
                 // e.preventDefault();        
                 let clave_1 = document.querySelector('#clave_1').value;
                 let clave_2 = document.querySelector('#clave_2').value;
@@ -57,10 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 document.querySelector("#msg-gral").focus();
-                document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Contraseña muy debil</div>";            
+                document.querySelector("#msg-gral").innerHTML = "<div class='msg-gral'>Contraseña muy débil</div>";            
                 return false;
             }                                     
         }                   
         return false;  
     });
+
+    
 })
