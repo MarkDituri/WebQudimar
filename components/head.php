@@ -9,13 +9,13 @@
     <!-- First Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Pgae Description -->
-    <meta name="description" content="Appcraft portfolio Template">
+    <meta name="description" content="Qudimar portfolio Template">
     <!-- Page Kewords -->
-    <meta name="keywords" content="Appcraft">
+    <meta name="keywords" content="Qudimar">
     <!-- Site Author -->
-    <meta name="author" content="Appcraft">
+    <meta name="author" content="Qudimar">
     <!-- Title -->
-    <title>Home 1 | Appcraft</title>
+    <title>Home 1 | Qudimar</title>
 	<!--FontAwesome-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- Favicon -->
