@@ -1010,7 +1010,7 @@ a.animated-button.style2:hover:after {
 #section-slider1 .swiper-slide .slider-content .left h1{
 	font-family: 'Poppins-Medium';
 	font-weight: 600;
-	font-size: 48px;
+	font-size: 3rem;
 	color: #ffffff;
 	margin-bottom: 16px;
 	line-height: 1.2;
@@ -1061,6 +1061,7 @@ a.animated-button.style2:hover:after {
 
 .cont-info h2, .cont-boxSucces h2{
 	font-weight: bold;
+	margin-bottom: 16px;
 }
 
 .section_clave .cont-boxSucces{

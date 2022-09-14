@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Uniocde -->
     <meta charset="utf-8">
@@ -9,13 +9,13 @@
     <!-- First Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Pgae Description -->
-    <meta name="description" content="Qudimar portfolio Template">
+    <meta name="description" content="Qudimar - Tu carta online lista para escanear">
     <!-- Page Kewords -->
     <meta name="keywords" content="Qudimar">
     <!-- Site Author -->
     <meta name="author" content="Qudimar">
     <!-- Title -->
-    <title>Home 1 | Qudimar</title>
+    <title>Qudimar | Tu carta online lista para escanear</title>
 	<!--FontAwesome-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- Favicon -->
@@ -34,4 +34,3 @@
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
-<body>

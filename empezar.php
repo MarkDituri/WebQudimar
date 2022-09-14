@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Uniocde -->
-    <meta charset="utf-8">
-    <!--[if IE]>
-    <meta http-equiv="X-UA Compatible" content="IE=edge">
-    <![endif]-->
-    <!-- First Mobile Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Pgae Description -->
-    <meta name="description" content="Qudimar portfolio Template">
-    <!-- Page Kewords -->
-    <meta name="keywords" content="Qudimar">
-    <!-- Site Author -->
-    <meta name="author" content="Qudimar">
-    <!-- Title -->
-    <title>Home 1 | Qudimar</title>
-	<!--FontAwesome-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.png">
-    <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-    <!-- Swiper Slider -->
-    <link rel="stylesheet" href="assets/css/swiper.min.css" type="text/css">
-    <!-- Fonts -->
-    <link rel="stylesheet" href="assets/fonts/fontawesome/font-awesome.min.css">
-    <!-- OWL Carousel -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" type="text/css">
-    <!-- CSS Animate -->
-    <link rel="stylesheet" href="assets/css/animate.min.css" type="text/css">
-    <!-- Style -->
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-	<!--SCSS-->
-	<link rel="stylesheet" href="assets/css/succes.css" type="text/css">
-</head>
+<?php
+	include('components/head.php');
+?>
 <body>	
 	<?php
 	// Section Preloader
@@ -79,7 +44,7 @@
 		<div class="row">
 			<div class="col-12 cont-info">						
 				<h2>Creá tu cuenta gratis ahora</h2>
-				<p class="p-1">Al hacerlo contarás con un perdiodo de <strong>30 dias gratis</strong> para usar el servicio y todas sus funciones.</p>		
+				<p class="p-1">Al hacerlo contarás con un periodo de <span style="font-weight: bold;">30 días gratis</span> para usar el servicio y todas sus funciones.</p>		
 			</div>
 		</div>
 
@@ -105,7 +70,7 @@
 						<div class="Mensaje" id="msg-apellido"></div>
 					</div>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<input type="email" class="form-control" name="email" id="email" placeholder="Correo eléctronico" >
+						<input type="email" class="form-control" name="email" id="email" placeholder="Correo electrónico" >
 						<div class="Mensaje" id="msg-email"></div>
 					</div>
 					<div class="form-group col-sm-12 col-md-12 col-lg-12">
@@ -119,7 +84,7 @@
 					</div>					
 					<div class="form-group form-group-box col-sm-12 col-md-12 col-lg-12">
 						<input type="checkbox" name="terminos" id="terminos">
-						<label for="terminos">Acepto los terminos y condiciones de uso.</label>
+						<label for="terminos">Acepto los <a style="color: #6f2aba;" href="help/terminos.php">términos y condiciones</a> de uso.</label>
 						<div class="Mensaje" id="msg-terminos"></div>
 					</div>
 				</div>
