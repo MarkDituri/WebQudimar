@@ -1,3 +1,8 @@
+<?php
+    $VAR1 = "texto de variable en el HTML";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
